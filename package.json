@@ -1,0 +1,18 @@
+{
+  "name": "cyrillic-inftelctor",
+  "version": "1.0.0",
+  "description": "cyrillic inftelctor (count, one, zero, some, many)",
+  "main": "index.js",
+  "repository": "git@github.com:a-x-/cyrillic-inftelctor.git",
+  "author": "Alex Mextner <invntrm@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "lodash.mapvalues": "^4.6.0"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1"
+  }
+}
