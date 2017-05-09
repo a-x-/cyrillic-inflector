@@ -1,2 +1,25 @@
 # cyrillic-inftelctor
 cyrillic inftelctor (count, one, zero, some, many)
+
+```js
+import inflect from 'cyrillic-inftelctor';
+
+const infl = count => inflect(count, {
+  zero: 'Файлы не загружены',
+  one: 'Загружен {} файл',
+  some: 'Загружено {} файла',
+  many: 'Загружено {} файлов'
+});
+test('complex zero', t => {
+  t.is(infl(0), 'Файлы не загружены');
+});
+test('complex one', t => {
+  t.is(infl(31), 'Загружен 31 файл');
+});
+test('complex some', t => {
+  t.is(infl(5564), 'Загружено 5564 файла');
+});
+test('complex many', t => {
+  t.is(infl(100500), 'Загружено 100500 файлов');
+});
+```
