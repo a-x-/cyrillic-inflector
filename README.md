@@ -1,8 +1,8 @@
-# cyrillic-inftelctor
-cyrillic inftelctor (count, one, zero, some, many)
+# cyrillic-inflector
+cyrillic inflector (count, one, zero, some, many)
 
 ```js
-import inflect from 'cyrillic-inftelctor';
+import inflect from 'cyrillic-inflector';
 
 const infl = count => inflect(count, {
   zero: 'Файлы не загружены',
