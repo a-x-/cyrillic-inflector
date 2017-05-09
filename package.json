@@ -1,9 +1,9 @@
 {
-  "name": "cyrillic-inftelctor",
+  "name": "cyrillic-inflector",
   "version": "1.0.1",
-  "description": "cyrillic inftelctor (count, one, zero, some, many)",
+  "description": "cyrillic inflector (count, one, zero, some, many)",
   "main": "index.js",
-  "repository": "git@github.com:a-x-/cyrillic-inftelctor.git",
+  "repository": "git@github.com:a-x-/cyrillic-inflector.git",
   "author": "Alex Mextner <invntrm@gmail.com>",
   "license": "MIT",
   "scripts": {
