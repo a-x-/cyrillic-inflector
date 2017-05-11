@@ -1,4 +1,4 @@
-# cyrillic-inflector [![Build Status](https://travis-ci.org/a-x-/inflector.svg?branch=master)](https://travis-ci.org/a-x-/inflector)
+# cyrillic-inflector [![Build Status](https://travis-ci.org/a-x-/cyrillic-inflector.svg?branch=master)](https://travis-ci.org/a-x-/cyrillic-inflector)
 cyrillic inflector (count, one, zero, some, many)
 
 ```js
