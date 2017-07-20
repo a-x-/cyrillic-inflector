@@ -16,6 +16,21 @@ test('templating', t => {
 test('21', t => {
   t.is(inflect(21, {one: '{} file'}), '21 file');
 });
+test('13', t => {
+  t.is(inflect(13, {many: '{} файлов'}), '13 файлов');
+});
+test('12', t => {
+  t.is(inflect(12, {many: '{} файлов'}), '12 файлов');
+});
+test('11', t => {
+  t.is(inflect(11, {many: '{} файлов'}), '11 файлов');
+});
+test('10', t => {
+  t.is(inflect(10, {many: '{} файлов'}), '10 файлов');
+});
+test('9', t => {
+  t.is(inflect(9, {many: '{} файлов'}), '9 файлов');
+});
 test('some', t => {
   t.is(inflect(2, {some: '{} файла'}), '2 файла');
 });
@@ -31,15 +46,15 @@ const inflect_ = count => inflect(count, {
   some: 'Загружено {} файла',
   many: 'Загружено {} файлов'
 });
-test('complex zero', t => {
+test('complete zero', t => {
   t.is(inflect_(0), 'Файлы не загружены');
 });
-test('complex one', t => {
+test('complete one', t => {
   t.is(inflect_(31), 'Загружен 31 файл');
 });
-test('complex some', t => {
+test('complete some', t => {
   t.is(inflect_(5564), 'Загружено 5564 файла');
 });
-test('complex many', t => {
+test('complete many', t => {
   t.is(inflect_(100500), 'Загружено 100500 файлов');
 });

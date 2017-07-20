@@ -12,6 +12,7 @@ module.exports = function (count, patterns) {
   var str = mapValues(patterns, function(pattern) { return pattern.replace('{}', count); });
   if (!count) return str.zero;
   if (count % 10 === 1 && count !== 11) return str.one;
-  if (count % 10 >= 2 && count % 10 <= 4) return str.some;
+  if (count % 10 >= 2 && count % 10 <= 4)
+    if (Math.floor(count / 10) !== 1) return str.some;
   return str.many;
 };
