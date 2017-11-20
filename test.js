@@ -61,3 +61,12 @@ test('complete many', t => {
 test('negative num', t => {
    t.is(inflect(-1, { one: 'Погода: небольшой снегопад, {} градус' }), 'Погода: небольшой снегопад, -1 градус');
 })
+
+const infl = inflect({
+  zero: 'Компьютеры не заражены',
+  one: 'Заражён {} компьютер',
+});
+
+test('partial application', t => {
+  t.is(infl(21), 'Заражён 21 компьютер');
+});
