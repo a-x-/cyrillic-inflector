@@ -8,8 +8,9 @@ var mapValues = require('lodash.mapvalues');
  */
 module.exports = function(count, patterns)  {
   if (arguments.length === 1 && arguments[0].toString() === '[object Object]') {
+    var patterns_ = arguments[0];
     return function (count) {
-      return inflect(count, arguments[0]);
+      return inflect(count, patterns_);
     };
   }
   return inflect(count, patterns);
