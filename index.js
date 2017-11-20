@@ -1,5 +1,11 @@
 var mapValues = require('lodash.mapvalues');
 
+/**
+ * curry wrapper.
+ * @example
+ * const infl = Infl({ one: '{} apple' }, zero: 'no apples', some: '{} apples', many: '{} apples' })
+ * infl(100500) // --> '100500 apples'
+ */
 module.exports = function(count, patterns)  {
   if (arguments.length === 1 && arguments[0].toString() === '[object Object]') {
     return function (count) {
