@@ -17,12 +17,12 @@ module.exports = function(count, patterns)  {
  * @param {String} opts.some - Загружено {} файла
  * @param {String} opts.many - Загружено {} файлов
  */
-function inflect (count_, patterns) {
-  var count = Math.abs(count_);
+function inflect (count, patterns) {
+  var count_ = Math.abs(count);
   var str = mapValues(patterns, function(pattern) { return pattern.replace('{}', count); });
-  if (!count) return str.zero;
-  if (count >= 11 && count <= 14) return str.many;
-  if (count % 10 === 1) return str.one;
-  if (count % 10 >= 2 && count % 10 <= 4) return str.some;
+  if (!count_) return str.zero;
+  if (count_ >= 11 && count_ <= 14) return str.many;
+  if (count_ % 10 === 1) return str.one;
+  if (count_ % 10 >= 2 && count_ % 10 <= 4) return str.some;
   return str.many;
 }
