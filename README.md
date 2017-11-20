@@ -4,7 +4,9 @@ cyrillic inflector (count, one, zero, some, many)
 ```js
 import inflect from 'cyrillic-inflector';
 
-const infl = count => inflect(count, {
+inflect(0, { zero: 'no calls', one: '{} call' }) // --> no calls
+
+const infl = inflect({
   zero: 'Файлы не загружены',
   one: 'Загружен {} файл',
   some: 'Загружено {} файла',
@@ -23,3 +25,4 @@ test('complex many', t => {
   t.is(infl(100500), 'Загружено 100500 файлов');
 });
 ```
+
