@@ -58,3 +58,6 @@ test('complete some', t => {
 test('complete many', t => {
   t.is(inflect_(100500), 'Загружено 100500 файлов');
 });
+test('negative num', t => {
+   t.is(inflect(-42, { one: 'Погода: небольшой снегопад, {} градус' }), 'Погода: небольшой снегопад, -1 градус');
+})
