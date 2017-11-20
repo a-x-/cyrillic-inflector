@@ -8,7 +8,8 @@ var mapValues = require('lodash.mapvalues');
  * @param {String} opts.some - Загружено {} файла
  * @param {String} opts.many - Загружено {} файлов
  */
-module.exports = function (count, patterns) {
+module.exports = function (count_, patterns) {
+  var count = Math.abs(count_);
   var str = mapValues(patterns, function(pattern) { return pattern.replace('{}', count); });
   if (!count) return str.zero;
   if (count >= 11 && count <= 14) return str.many;
