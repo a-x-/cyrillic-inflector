@@ -7,7 +7,9 @@
   "author": "Alex Mextner <invntrm@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
     "lodash.mapvalues": "^4.6.0"
