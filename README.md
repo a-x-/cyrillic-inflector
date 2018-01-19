@@ -29,8 +29,19 @@ test('complex many', t => {
 
 
 ## TODO
-- [ ] find alternative solutions
-- [ ] add multiple variables support
-- [ ] add genders
-- [ ] find automatic inflector (generate suffixes automatically)
-    - for ex-usser full names: [petrovich](https://github.com/petrovich/petrovich-js)
+- [ ] multiple variables support
+- [ ] genders
+- find alternative solutions
+  - [ ] automatic inflector (generate suffixes automatically)
+
+## alternatives
+- [messageformat]
+  - genders
+  - multiple variables
+
+- [petrovich]
+  - automatic cyrillic inflector
+    - ex-usser full names
+    
+[messageformat]: https://github.com/messageformat/messageformat.js
+[petrovich]: https://github.com/petrovich/petrovich-js
