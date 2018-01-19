@@ -26,3 +26,9 @@ test('complex many', t => {
 });
 ```
 
+
+
+## TODO
+- [ ] find alternative solutions
+- [ ] add multiple variables support
+- [ ] add genders
