@@ -32,3 +32,5 @@ test('complex many', t => {
 - [ ] find alternative solutions
 - [ ] add multiple variables support
 - [ ] add genders
+- [ ] find automatic inflector (generate suffixes automatically)
+    - for ex-usser full names: [petrovich](https://github.com/petrovich/petrovich-js)
