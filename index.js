@@ -26,7 +26,9 @@ module.exports = function(count, patterns)  {
  */
 function inflect (count, patterns) {
   var count_ = Math.abs(count);
-  var str = mapValues(patterns, function(pattern) { return pattern.replace('{}', count); });
+  var str = mapValues(patterns, function(pattern) {
+    return typeof pattern === 'string' ? pattern.replace('{}', count) : pattern(count);
+  });
   if (!count_) return str.zero;
   if (count_ >= 11 && count_ <= 14) return str.many;
   if (count_ % 10 === 1) return str.one;
