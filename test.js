@@ -63,7 +63,7 @@ test('negative num', t => {
 })
 
 test('pattern-functions', t => {
-  t.is(inflect(11, { many: (value) => 'has b' + value.toString(2) + ' nerds in the team' }), 'nas b1011 nerds in the team');
+  t.is(inflect(11, { many: (value) => 'has b' + value.toString(2) + ' nerds in the team' }), 'has b1011 nerds in the team');
 });
 
 const infl = inflect({
