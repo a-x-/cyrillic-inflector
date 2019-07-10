@@ -6,7 +6,7 @@ var mapValues = require('lodash.mapvalues');
  * const infl = Infl({ one: '{} apple', zero: 'no apples', some: '{} apples', many: '{} apples' })
  * infl(100500) // --> '100500 apples'
  */
-module.exports = function(count, patterns)  {
+module.exports = function (count, patterns) {
   if (arguments.length === 1 && arguments[0].toString() === '[object Object]') {
     var patterns_ = arguments[0];
     return function (count) {
@@ -24,9 +24,9 @@ module.exports = function(count, patterns)  {
  * @param {String} opts.some - Загружено {} файла
  * @param {String} opts.many - Загружено {} файлов
  */
-function inflect (count, patterns) {
+function inflect(count, patterns) {
   var count_ = Math.abs(count);
-  var str = mapValues(patterns, function(pattern) {
+  var str = mapValues(patterns, function (pattern) {
     return typeof pattern === 'string' ? pattern.replace('{}', count) : pattern(count);
   });
   if (!count_) return str.zero;
