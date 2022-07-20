@@ -1,37 +1,38 @@
-var mapValues = require('lodash.mapvalues');
-
 /**
  * curry wrapper.
  * @example
- * const infl = Infl({ one: '{} apple', zero: 'no apples', some: '{} apples', many: '{} apples' })
- * infl(100500) // --> '100500 apples'
+ * const infl = Infl({ one: '{} яблоко', zero: 'нет яблок', some: '{} яблока', many: '{} яблок' })
+ * infl(100500) // --> '100500 яблок'
  */
 module.exports = function (count, patterns) {
-  if (arguments.length === 1 && arguments[0].toString() === '[object Object]') {
-    var patterns_ = arguments[0];
-    return function (count) {
-      return inflect(count, patterns_);
-    };
+  if (arguments.length === 1 && arguments[0].toString() === "[object Object]") {
+    const patterns_ = arguments[0];
+    return (count) => inflect(count, patterns_);
   }
   return inflect(count, patterns);
 };
 
 /**
- * @param {Object} opts
- * @param {Number} opts.count
- * @param {String} opts.zero - Файлы не загружены
- * @param {String} opts.one - Загружен {} файл
- * @param {String} opts.some - Загружено {} файла
- * @param {String} opts.many - Загружено {} файлов
+ * @param {Number} count
+ * @param {Object} patterns
+ * @param {String} patterns.zero - Файлы не загружены
+ * @param {String} patterns.one - Загружен {} файл
+ * @param {String} patterns.some - Загружено {} файла
+ * @param {String} patterns.many - Загружено {} файлов
  */
-function inflect(count, patterns) {
-  var count_ = Math.abs(count);
-  var str = mapValues(patterns, function (pattern) {
-    return typeof pattern === 'string' ? pattern.replace('{}', count) : pattern(count);
+function inflect(_count, patterns) {
+  const count = Math.abs(_count);
+  const res = {};
+  Object.keys(patterns).forEach((key) => {
+    const pattern = patterns[key];
+    res[key] =
+      typeof pattern === "string"
+        ? pattern.replace("{}", _count)
+        : pattern(_count);
   });
-  if (!count_) return str.zero;
-  if (count_ >= 11 && count_ <= 14) return str.many;
-  if (count_ % 10 === 1) return str.one;
-  if (count_ % 10 >= 2 && count_ % 10 <= 4) return str.some;
-  return str.many;
+  if (!count) return res.zero;
+  if (count >= 11 && count <= 14) return res.many;
+  if (count % 10 === 1) return res.one;
+  if (count % 10 >= 2 && count % 10 <= 4) return res.some;
+  return res.many;
 }
